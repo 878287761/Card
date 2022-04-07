@@ -123,3 +123,24 @@ li.guide_tab3{width:291px; margin-left:52px;}
 /*countinue*/
 .logo_li{ margin-left:275px;}
 .logo{ display:block; width:100%; height:100%;}
+.download-button{
+	font-size: 1.5rem;
+	font-weight: 400;
+	line-height: 2.75em;
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	margin-right: 2.2em;
+	padding: 0 2.2em;
+	cursor: pointer;
+	-webkit-transition: all .1s linear;
+	-o-transition: all .1s linear;
+	transition: all .1s linear;
+	letter-spacing: .025em;
+	color: #111;
+	border: 3px solid #fff;
+	border-radius: 4em;
+	background: #fff;
+	margin-top: 50px;
+	margin-left: 40px;
+}

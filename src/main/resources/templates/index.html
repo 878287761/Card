@@ -1,6 +1,7 @@
 <!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">-->
-<html lang="en" xmlns="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="robots" content="all">
@@ -23,8 +24,8 @@
   <div class="toper">
     <div class="toper-inner">
       <ul class="menu cfix" id="menu">
-        <li class="menu-intro"> <a class="curr" title="游戏简介" href="#intro"><span>游戏简介</span></a> </li>
-        <li class="menu-feature"> <a title="游戏下载" href="#feature"><span>游戏下载</span></a> </li>
+        <li class="menu-intro"> <a class="curr" title="游戏下载" href="#intro"><span>游戏下载</span></a> </li>
+        <li class="menu-feature"> <a title="游戏简介" href="#feature"><span>游戏简介</span></a> </li>
         <li class="menu-guide"> <a title="游戏指南" href="#guide"><span>游戏指南</span></a> </li>
         <li class="logo_li"><a href="default.htm" class="logo"></a></li>
       </ul>
@@ -36,9 +37,10 @@
       <div id="mainer2-page0" class="mainer2">
         <p id="introImg" class="intro-img cfix zbc"> <a class="fl imgs-lnk" href="javascript:imgshow('introImg',0)" title=""><img src="img/pic/intro-pic1.jpg" alt=""><span class="sbg wx" id="span_1_0"></span></a> <a class="fl imgs-lnk" href="javascript:imgshow('introImg',1)" title=""><img src="img/pic/intro-pic2.jpg" alt=""><span class="sbg wx" id="span_1_1"></span></a> </p>
         <div class="intro_text">
-          <h2>游戏简介</h2>
-          <p>《行星边际2》是一款顶级画面体验的战争MMOFPS射击游戏大作，游戏采用索尼在线娱乐（SOE）最新ForgeLight&#8482;游戏引擎制作，在射击游戏同图承载人数上取得了技术性突破，数以千计的玩家将能够同时在一张地图世界内展开战斗玩家可同自己的好友或公会携手共赴战场。</p>
+          <h2>游戏下载</h2>
         </div>
+        <a th:href="@{/file/download/navicat150_premium_cs_x64.exe}"><button class="download-button">安卓下载</button></a>
+        <button class="download-button">Apple下载</button>
       </div>
     </div>
   </div>
@@ -47,11 +49,11 @@
     <div id="wrapinner-page1" class="wrap-feature-inner">
       <div id="mainer2-page1" class="mainer2">
         <div class="feature_text">
-          <h2>游戏特色</h2>
-          <p> 不同于传统FPS对战类游戏，《行星边际2》的战争将在一幅开放性无缝连接<span class="cBlue">世界地图</span>内展开，玩家<span class="cBlue">不需要加入或建立房间</span>进行游戏。</p>
+          <h2>游戏简介</h2>
+          <p> 欢乐拱猪是一款以传统棋牌游戏“拱猪”为基础来开发的，能提供<span class="cBlue">多人在线</span>，<span class="cBlue">即时匹配</span>的网络棋牌游戏。</p>
         </div>
         <div class="feature_text2">
-          <h3>《行星边际2》作为一款全新的MMOFPS游戏，将包含以下特性：</h3>
+          <h3>《欢乐拱猪》作为一款全新的TAB游戏，将包含以下特性：</h3>
           <p>1. 地图面积达到<span class="cBlue">64平</span>方公里，最多可以<span class="cBlue">支持2000</span>名玩家在一个地图内进行战斗<br />
             2. 三大阵营全面领土战争：地球共和国 vs 新联邦 vs 瓦努主权国<br />
             3. <span class="cBlue">6大</span>步兵职业，可在游戏内可随意切换。<br />
@@ -70,46 +72,49 @@
           <div id="guideInner" class="guideInner">
             <div class="gride grideCon1">
               <div class="conInner">
-                <h2>战争目标</h2>
-                <h3>三阵营全面领土争夺战</h3>
-                <p class="tx">《行星边际2》的核心游戏内容是对关键地域的争夺，以及稀有资源的控制。每处战场都包含着价值昂贵的资源以及战略上的必争之地。</p>
-                <p class="tx">征服并占领这些地域的势力，将获得额外的资源和弹药，并在技术研究中处于优势，可在游戏内更快的获取证书训练点数，通过证书点玩家可以更快的解锁新武器。</p>
+                <h2>对局目标</h2>
+                <h3>对局结束后得分最低</h3>
+                <p class="tx">对局由4个玩家，52张扑克牌组成，一拱13回合，首回合由黑桃7所有者出牌且必出黑桃7，
+                  每回合由上一回合中与首次出的牌的花色一致且牌最大者出牌。</p>
+                <p class="tx">后续出牌玩家出牌必须与每回合首张牌花色一致，若手牌中无此花色，则可以随便出牌。</p>
+                <p class="tx">一些特殊的牌含有分值，花色一致且最大者将获得回合中牌的分值，对局结束分值最高者失败，
+                  单一玩家获取所有分值直接胜利，单一玩家获取除黑桃Q意外所有分值，则黑桃Q拥有者失败</p>
               </div>
             </div>
             <div class="gride grideCon2">
               <div class="conInner">
-                <h2>加入战场</h2>
-                <p class="tx"> 进入游戏后，按"M"键打开游戏战略地图，可在此界面玩家可以查看当前大陆的战争状态，并通过界面左下方的"快速加入战场"按钮直接空投至战斗最激烈的战场。<br />
-                  除了轨道空投外，玩家还可以通过右上方的地图控制板手动寻找战场，并通过鼠标右键地图上任意一点，设定个人或小队路标，这样在主视角HUD界面内便可以跟随这些路标到达指定战场。</p>
+                <h2>加入房间</h2>
+                <p class="tx"> 玩家登录游戏后，点击单人匹配则加入对局房间等待，当房间人数等于4且都准备时开始对局。<br />
+                  </p>
                 <div class="text2">
-                  <p>游戏中还提供11种陆空载具供玩家驾驶。</p>
-                  <p>玩家在载具终端内可以领取载具，驾驶它们便可快速到达战场，并且能够向友军提供强大的战场火力。按"E"键可进出载具或防御装置。</p>
+                  <p>对局中提供快捷喊话功能，记录了一些拱猪常用语句，可拱玩家交互</p>
+                  <p>对局未结束退出游戏者扣除游戏币，且逃跑场加1，当逃跑场次到达一定次数则对账号进行禁赛处理</p>
                 </div>
                 <p id="guideImg" class="guide-img s-img cfix zbc"> <a class="fl imgs-lnk" href="javascript:imgshow('guideImg',0)" title=""><img src="img/pic/feature-pic8.jpg" alt=""><span class="sbg wx" id="span_1_5"></span></a> </p>
               </div>
             </div>
             <div class="gride grideCon3">
               <div class="conInner">
-                <h2>战场生存必备知识</h2>
+                <h2>特殊牌分值介绍</h2>
                 <div class="rec">
-                  <h3>敌我识别：</h3>
-                  <p>游戏内默认设置友军顶部为蓝色倒三角标记<span><img src="img/p3_arr1.png" width="34" height="30" alt="arr" /></span>，敌军顶部为红色倒三角标记<span><img src="img/p3_arr2.png" width="34" height="30" alt="arr" /></span><br />
-                    如果发现敌军单位，请按"<span class="cBlue b">Q</span>"键报告敌人方位，进行标记，如果敌人尚未被附近任何友军报告位置的情况下，则头顶无任何标记。</p>
+                  <h3>红心+大小王介绍</h3>
+                  <p>游戏中大小王属于红心<br />
+                    各红心分值如下图所示</p>
                 </div>
                 <div class="rec2">
-                  <h3>复活重生：</h3>
-                  <p>玩家在战斗中死亡后，可以在地图界面选择附近友军控制的重生装置内复活</p>
+                  <!--<h3>复活重生：</h3>
+                  <p>玩家在战斗中死亡后，可以在地图界面选择附近友军控制的重生装置内复活</p>-->
                 </div>
                 <div class="rec3 cfix">
                   <div class="tx2 fl">
                     <div class="cell">
-                      <h3>更换职业武器:</h3>
-                      <p>除了重生部署界面外，玩家还可以在游戏中寻找武器终端，以便随时更换职业和武器装备。</p>
+                      <h3>梅花10，方块J,黑桃Q介绍 如图</h3>
+                      <p>计算得分优先级: 黑桃Q>方块J>梅花10</p>
                     </div>
                   </div>
                   <div class="tx2 fl">
                     <div class="cell">
-                      <h3>游戏中设施图标作用:</h3>
+                      <h3>对局结束奖励/扣除游戏币规则:</h3>
                     </div>
                   </div>
                   <p id="con3Img" class="con3Img-img s-img cfix zbc"> <a class="fl imgs-lnk" href="javascript:imgshow('con3Img',0)" title=""><img src="img/pic/gride-pic1.jpg" alt=""><span class="sbg wx" id="span_1_7"></span></a> <a class="fl imgs-lnk" href="javascript:imgshow('con3Img',1)" title=""><img src="img/pic/gride-pic2.jpg" alt=""><span class="sbg wx" id="span_1_8"></span></a> </p>
@@ -172,6 +177,7 @@ $(function(){
 		$(this).stop().fadeTo('slow',0);
 	});			
 })
+
 </script>
 </body>
 </html>
