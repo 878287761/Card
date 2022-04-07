@@ -1,5 +1,6 @@
 package com.lilei.card.controller;
 
+import com.lilei.card.service.DownCountService;
 import com.lilei.card.service.FileService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,6 +22,8 @@ public class FileController {
     private static final Logger logger = LoggerFactory.getLogger(FileController.class);
 
     @Autowired
+    private DownCountService downCountService;
+    @Autowired
     private FileService fileService;
 
     @RequestMapping("/")
@@ -29,9 +32,11 @@ public class FileController {
     }
 
     @ResponseBody
-    @GetMapping("download/{fileName}")
-    public ResponseEntity<Resource> downloadFile(@PathVariable String fileName,
+    @GetMapping("download")
+    public ResponseEntity<Resource> downloadFile(/*@PathVariable String fileName,*/
                                                  HttpServletRequest request){
+        //下载的文件名
+        String fileName = "navicat150_premium_cs_x64.exe";
         Resource resource = fileService.loadFileAsResource(fileName);
         String contentType = null;
         try {
@@ -42,6 +47,8 @@ public class FileController {
         if (contentType==null){
             contentType="application/octet-stream";
         }
+        //更新一次才在次数
+        downCountService.UpDownCount();
         return ResponseEntity.ok()
                 .contentType(MediaType.parseMediaType(contentType))
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"")

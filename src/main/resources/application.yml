@@ -1,5 +1,13 @@
 ###ThymeLeaf配置
 spring:
+  #mysql
+  datasource:
+    url: jdbc:mysql://120.55.64.120:3306/pig_card?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    filters: stat
   thymeleaf:
     #模板的模式，支持 HTML, XML TEXT JAVASCRIPT
     mode: HTML5
@@ -14,3 +22,9 @@ spring:
 
 file:
   doc-dir: D:\doc  #文件下载地址
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl   #打印sql语句
+    map-underscore-to-camel-case: true    #开启自动驼峰命名规则

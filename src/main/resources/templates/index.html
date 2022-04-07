@@ -27,7 +27,7 @@
         <li class="menu-intro"> <a class="curr" title="游戏下载" href="#intro"><span>游戏下载</span></a> </li>
         <li class="menu-feature"> <a title="游戏简介" href="#feature"><span>游戏简介</span></a> </li>
         <li class="menu-guide"> <a title="游戏指南" href="#guide"><span>游戏指南</span></a> </li>
-        <li class="logo_li"><a href="default.htm" class="logo"></a></li>
+        <li class="logo_li"><a href="#" class="logo"></a></li>
       </ul>
     </div>
   </div>
@@ -39,8 +39,8 @@
         <div class="intro_text">
           <h2>游戏下载</h2>
         </div>
-        <a th:href="@{/file/download/navicat150_premium_cs_x64.exe}"><button class="download-button">安卓下载</button></a>
-        <button class="download-button">Apple下载</button>
+        <a th:href="@{/file/download}"><button class="download-button">安卓下载</button></a>
+        <button id="apple-download" class="download-button">Apple下载</button>
       </div>
     </div>
   </div>
@@ -176,6 +176,10 @@ $(function(){
 	}).mouseleave(function(){
 		$(this).stop().fadeTo('slow',0);
 	});			
+})
+
+$("apple-download").click(function (){
+  alert("抱歉，开发者用的安卓，暂时没有Apple版本!")
 })
 
 </script>
